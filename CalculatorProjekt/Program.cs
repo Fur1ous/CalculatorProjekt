@@ -7,22 +7,20 @@ namespace CalculatorProjekt
     {
         static void Main(string[] args)
         {
-            Punkt p1;
-            Punkt p2;
-
+    
             Console.WriteLine("Bitte Zahl 1 eingeben.");
             string zahl1 = Console.ReadLine();
 
             Console.WriteLine("Bitte Zahl 2 eingeben.");
             string zahl2 = Console.ReadLine();
 
-            float z1 = 0;
-            float z2 = 0;
-
+            MyPoint p1 = new MyPoint();
+            MyPoint p2 = new MyPoint();
+            
             try
             {
-                z1 = float.Parse(zahl1);
-                z2 = float.Parse(zahl2);
+                p1 = MyPoint.Parse(zahl1);
+                p2 = MyPoint.Parse(zahl2);
             }
             catch (FormatException e)
             {
@@ -34,7 +32,7 @@ namespace CalculatorProjekt
                 Console.WriteLine(e.Message);
             }
 
-            Console.WriteLine("Ergebnis: " + (z1 + z2));
+            Console.WriteLine("Ergebnis: " + (p1 + p2));
 
         }
     }
